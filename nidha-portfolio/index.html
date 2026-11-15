@@ -1993,8 +1993,13 @@
       lens.style.backgroundPosition = `${-(x * Z - L)}px ${-(y * Z - L)}px`;
     }
     function lensHome() { lens.classList.remove('follow'); const img = $('#dImg'); lensAt(img.clientWidth * .3, img.clientHeight * .62) }
-    art.addEventListener('pointermove', e => { const r = art.getBoundingClientRect(); lens.classList.add('follow'); lensAt(clamp(e.clientX - r.left, 0, r.width), clamp(e.clientY - r.top, 0, r.height)) });
-    art.addEventListener('pointerleave', lensHome);
+    const hasHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (hasHover) {
+      art.addEventListener('pointermove', e => { const r = art.getBoundingClientRect(); lens.classList.add('follow'); lensAt(clamp(e.clientX - r.left, 0, r.width), clamp(e.clientY - r.top, 0, r.height)) });
+      art.addEventListener('pointerleave', lensHome);
+    } else {
+      lens.style.display = 'none';
+    }
     addEventListener('resize', () => { if (dlg.open) lensHome() });
 
     /* ---------- form ---------- */
