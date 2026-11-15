@@ -1554,7 +1554,7 @@
   <main>
     <section class="hero" id="top">
       <div class="wrap">
-        <h1 class="hero-name"><span class="letters" id="letters" aria-label="Rokeya Nida"></span><img class="hero-photo"
+        <h1 class="hero-name"><span class="letters" id="letters" aria-label="Rokeya"></span><img class="hero-photo"
             id="heroPhoto" alt=""></h1>
         <div class="hero-sub">
           <p id="heroLine"></p>
@@ -1827,7 +1827,7 @@
     /* ---------- fill text ---------- */
     document.title = "Rokeya";
     document.querySelectorAll('.logo,.foot-name').forEach(e => e.textContent = CONFIG.name);
-    $('#letters').innerHTML = [...CONFIG.name.toUpperCase()].map((c, i) => `<span style="animation-delay:${.1 + i * .08}s">${c}</span>`).join('');
+    $('#letters').innerHTML = [...'ROKEYA'].map((c, i) => `<span style="animation-delay:${.1 + i * .08}s">${c}</span>`).join('');
     const photo = CONFIG.photo || IMG.rose;
     $('#heroPhoto').src = photo;
     $('#aboutPhoto').src = CONFIG.photo || sk(10).src;
