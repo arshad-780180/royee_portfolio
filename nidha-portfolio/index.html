@@ -1825,7 +1825,7 @@
     })();
 
     /* ---------- fill text ---------- */
-    document.title = CONFIG.name + " — Sketches";
+    document.title = "Rokeya";
     document.querySelectorAll('.logo,.foot-name').forEach(e => e.textContent = CONFIG.name);
     $('#letters').innerHTML = [...CONFIG.name.toUpperCase()].map((c, i) => `<span style="animation-delay:${.1 + i * .08}s">${c}</span>`).join('');
     const photo = CONFIG.photo || IMG.rose;
